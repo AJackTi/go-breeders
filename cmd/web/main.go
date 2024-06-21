@@ -21,7 +21,9 @@ type appConfig struct {
 }
 
 func main() {
-	app := application{}
+	app := application{
+		templateMap: make(map[string]*template.Template),
+	}
 
 	flag.BoolVar(&app.config.useCache, "cache", false, "Use template cache")
 	flag.Parse()
