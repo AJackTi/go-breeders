@@ -4,14 +4,14 @@ import (
 	"os"
 	"testing"
 
-	"go-breeders/models"
+	"go-breeders/configuration"
 )
 
 var testApp application
 
 func TestMain(m *testing.M) {
 	testApp = application{
-		Models: *models.New(nil),
+		App: configuration.New(nil),
 	}
 
 	os.Exit(m.Run())
